@@ -1,0 +1,38 @@
+Dataset: 20,000 records, 80 possible categories
+Timing: median of 5 runs; dataset generated before timing
+Baseline median:  0.014552 seconds
+Optimized median: 0.003123 seconds
+Speedup:          4.66x
+Time reduction:   78.5%
+Correctness:      PASS (full output dictionaries match)
+
+Top baseline profile entries:
+         32 function calls in 0.013 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.013    0.013    0.013    0.013 original.py:4(summarize_sales)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       15    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+       14    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+
+
+
+
+Top optimized profile entries:
+         20019 function calls in 0.006 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.004    0.004    0.006    0.006 optimized.py:4(summarize_sales)
+    20000    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       15    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+        1    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+
+
+
